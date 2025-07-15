@@ -3,6 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import connectDB from './configs/db.js'; //complete file with extention
 import adminRouter from './routes/adminRouter.js';
+import blogRouter from './routes/blogRouter.js';
 
 
 //3.52 minute se start
@@ -19,13 +20,37 @@ await connectDB() // data base connect krne ke liye
 
 // use() ye hme madad krta he middleware apply krne ke liye hmare server, jse express.json ,cors is
 //middleware he jisse hme use krna he to use use me bhe do as parameter
+
+
+
+
 app.use(cors());
 app.use(express.json()) // use for convert use data into json and access req.body
 
+
+
+
 const PORT=process.env.PORT || 3000;
 
+
+
+
+
 app.get('/' ,(req,res)=>res.send('API is Working...'))
+
+
+
+
 app.use('/api/admin',adminRouter);
+app.use('/api/blog',blogRouter);
+
+
+
+
+
+
+
+
 
 app.listen(PORT,()=>{ //listen ka matlab hai server ko start karna aur clients ki requests sunna.
     console.log('sever is running on port ' + PORT)
