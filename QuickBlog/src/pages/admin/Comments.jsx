@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { comments_data } from '../../assets/assets';
 import CommentTableItem from '../../components/admin/CommentTableItem';
+import { useAppContext } from '../../context/AppContest';
 
 const Comments = () => {
 
@@ -8,9 +9,25 @@ const Comments = () => {
 
   const[filter, setFilter]=useState('Not Aproved');
 
+  
+  const {axios}=useAppContext();
+
+  
+
+
+
   const fetchComments=async ()=>
   {
-    setComments(comments_data);
+     try {
+
+      const{data}=await axios.get('/api/admin/comments')
+      data.success? setComments(data.comments):toast.error(data.message);
+      
+     } catch (error) {
+      
+      toast.error(data.message);
+      
+     }
   }
 
   useEffect(()=>

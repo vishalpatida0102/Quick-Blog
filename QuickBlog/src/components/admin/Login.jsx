@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Login = () => {
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const{token,setToken}=useAppContext();
 
@@ -29,8 +29,7 @@ const Login = () => {
         localStorage.setItem('token',data.token)
         axios.defaults .headers.common['Authorization']=data.token;
 
-        //  navigate('/admin'); // or your admin dashboard route
-
+       
        }
        else{
     toast.error(data.message)

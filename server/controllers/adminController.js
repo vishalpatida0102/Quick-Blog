@@ -55,34 +55,29 @@ export const getAllComments= async(req,res)=>
 }
 
  
+ // ✅ Make sure this is correct
 
 export const getDashboard = async (req, res) => {
+  try {
+    const recentBlogs = await Blog.find({}).sort({ createdAt: -1 }).limit(5);
 
-try {
+    const blogs = await Blog.countDocuments();
+    const comments = await Comment.countDocuments(); // ✅ fixed spelling
+    const drafts = await Blog.countDocuments({ isPublished: false });
 
-const recentBlogs = await Blog.find({}).sort({ createdAt: -1}).limit(5)
+    const dashboardData = {
+      blogs,
+      comments,
+      drafts,
+      recentBlogs,
+    };
 
-const blogs = await Blog.countDocuments();
+    res.json({ success: true, dashboardData });
+  } catch (error) {
+    res.json({ success: false, message: error.message });
+  }
+};
 
-const comments = await Component.countDocuments()
-
-const drafts = await Blog.countDocuments({isPublished: false})
-
-const dashboardData = {
-
-blogs, comments, drafts, recentBlogs
-
-}
-
-res.json({success: true, dashboardData}) 
-
-} catch (error) {
-
-res.json({success: false, message: error.message})
-
-}
-
-}
 
 
 

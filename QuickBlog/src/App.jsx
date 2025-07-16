@@ -15,7 +15,7 @@ import { useAppContext } from './context/AppContest'
 
 const App = () => {
   
- const {token}=useAppContext
+ const {token}=useAppContext();
 
   return (
     <div>    
