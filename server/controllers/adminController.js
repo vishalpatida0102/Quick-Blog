@@ -83,3 +83,34 @@ res.json({success: false, message: error.message})
 }
 
 }
+
+
+
+
+export const deleteCoomentById=async (req,res)=>{
+    try {
+        const {id}=req.body;
+        await Comment.findByIdAndDelete(id);
+        res.json({success:true,message:"comment deleted successfully"})
+        
+    } catch (error) {
+        
+        res.json({success:false,message:error.message});
+
+    }
+}
+
+
+
+export const approveCoomentById=async (req,res)=>{
+    try {
+        const {id}=req.body;
+        await Comment.findByIdAndUpdate(id,{isApproved:true});
+        res.json({success:true,message:"comment approved successfully"})
+        
+    } catch (error) {
+        
+        res.json({success:false,message:error.message});
+
+    }
+}

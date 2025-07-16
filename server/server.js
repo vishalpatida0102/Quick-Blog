@@ -6,7 +6,7 @@ import adminRouter from './routes/adminRouter.js';
 import blogRouter from './routes/blogRouter.js';
 
 
-//3.52 minute se start
+//5.19 minute se start
 
 const app=express(); // use express and male app 
 //aapke poore Express server ka main controller hai, jisse aap server ki saari settings, routes, aur middleware handle karte ho by the help of use().
