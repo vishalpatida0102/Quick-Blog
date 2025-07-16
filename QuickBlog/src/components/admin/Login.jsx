@@ -11,8 +11,8 @@ const Login = () => {
 
   const{token,setToken}=useAppContext();
 
-  const [email, setEmail]=useState('vishal20@gmail.com');
-  const [password,setPassword]=useState('Hii@12');
+  const [email, setEmail]=useState('admin01@gmail.com');
+  const [password,setPassword]=useState('Admin@12');
 
   const handleSubmit = async (e) => {
   e.preventDefault(); // page reload nahi hoga
