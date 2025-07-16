@@ -66,9 +66,9 @@ export const getAllBlogs = async(req,res)=>
 {
     try {
          
-        const blog= await Blog.find({isPublished:true});
+        const blogs= await Blog.find({isPublished:true});
 
-        res.json({success:true, blog})
+        res.json({success:true, blogs})
 
     } catch (error) {
         
