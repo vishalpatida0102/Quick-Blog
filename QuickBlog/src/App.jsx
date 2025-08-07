@@ -11,6 +11,7 @@ import Login from './components/admin/Login'
 import 'quill/dist/quill.snow.css'
 import {Toaster} from 'react-hot-toast'
 import { useAppContext } from './context/AppContest'
+import Shimmer from './components/Shimmer'
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
       <Toaster/>
       <Routes>
            <Route path="/" element={<Home/>}></Route>
+           <Route path="/shimmer" element={<Shimmer/>}></Route>
            <Route path="/blog/:id" element={<Blog/>}></Route>
 
            <Route path='/admin' element={ token ? <Layout/>:<Login/>}>

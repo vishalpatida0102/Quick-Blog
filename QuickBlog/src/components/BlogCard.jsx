@@ -1,12 +1,17 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import Shimmer from './Shimmer';
 
 const BlogCard = ({blog}) => {
+         
+  
+    
     const {title, description, category, image, _id} = blog;
     const navigate=useNavigate();
-
+     
+  
   return (
-    <div onClick={(()=>navigate(`/blog/${_id}`))} className='w-full rounded-lg overflow-hidden shadow hover:scale-102 
+      <div onClick={(()=>navigate(`/blog/${_id}`))} className='w-full rounded-lg overflow-hidden shadow hover:scale-102 
     hover:shadow-primaary/25 duration-300 cursor-pointer'> 
          <img src={image} alt="" className='aspect-video'/>
          <span className='ml-5 mt-4 px-3 py-1 inline-block bg-primaary/20 rounded-full

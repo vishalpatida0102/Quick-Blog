@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { blog_data, blogCategories } from '../assets/assets'
 import { useState } from 'react'
 import {motion} from 'motion/react'
 import BlogCard from './BlogCard'
 import { useAppContext } from '../context/AppContest'
+import Shimmer from './Shimmer'
 
 const BlogList = () => {
     const [menu, setMenu] =  useState('All');
+
+
     const{blogs,input}=useAppContext();
+
+    if(!blogs || blogs.length==0)return <Shimmer/> // length bhi check krna jaruri he
+    
+
+    
+
 
    const filterBlogs = () => {
     console.log(blogs);
+    
   if (!input) return blogs;
 
   return blogs.filter((blog) =>
@@ -40,13 +50,14 @@ const BlogList = () => {
         </div>
          
          
+         
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4
         gap-8 mb-24 mx-8 sm:mx-16 xl:mx-40'>
             {filterBlogs().filter((blog)=>menu==='All' ? true:blog.category=== menu)
             .map((blog)=><BlogCard key={blog._id} blog={blog}/>)}
         </div>
     </div>
-  )
+  ) 
 }
 
 export default BlogList
