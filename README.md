@@ -48,32 +48,6 @@ A full-featured blogging platform built with the **MERN stack (MongoDB, Express.
 
 ```
 
-Quick Blog/
-│
-├──  QuickBlog/              # Frontend (React)
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── context/
-│   │   ├── assets/
-│   │   └── App.jsx
-│   └── index.html
-│
-├── server/              # Backend (Express)
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── configs/
-│   └── server.js
-│
-├── .env
-├── README.md
-└── package.json
-
-````
-
----
-
 ## 🔧 How to Run the Project Locally
 
 ### ✅ Backend (Express + MongoDB)
