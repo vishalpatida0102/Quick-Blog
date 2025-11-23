@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import Shimmer from './Shimmer';
+import Shimmer from './shimmer/HomeShimmer';
 
 const BlogCard = ({blog}) => {
          

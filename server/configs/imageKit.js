@@ -10,4 +10,5 @@ var imagekit = new ImageKit({
     urlEndpoint :process.env.URL_ENDPOINT
 });
 
+
 export default imagekit;

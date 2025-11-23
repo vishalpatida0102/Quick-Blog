@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { assets } from '../../assets/assets'
 import Sidebar from '../../components/admin/Sidebar'
 import { useAppContext } from '../../context/AppContest'
+ 
 
 
 const Layout = () => {
@@ -27,6 +28,7 @@ const Layout = () => {
         </div>
         <div className='flex h-[calc(100vh-70px)]'>
             <Sidebar/>
+    
             <Outlet/>
         </div>
      </>

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import {motion} from 'motion/react'
 import BlogCard from './BlogCard'
 import { useAppContext } from '../context/AppContest'
-import Shimmer from './Shimmer'
+import Shimmer from './shimmer/HomeShimmer'
 
 const BlogList = () => {
     const [menu, setMenu] =  useState('All');

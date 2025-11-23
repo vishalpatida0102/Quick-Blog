@@ -18,7 +18,7 @@ export const adminLogin= async(req,res)=>
          
    }
    catch (err){
-     res.json({status:400 ,success:false, message: err.message })
+     
       
    }
 }

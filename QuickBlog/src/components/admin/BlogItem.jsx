@@ -2,8 +2,11 @@ import React from 'react'
 import { assets } from '../../assets/assets';
 import { useAppContext } from '../../context/AppContest';
 import toast from 'react-hot-toast';
+import ListShimmer from '../shimmer/ListShimmer';
 
 const BlogItem = ({blog,fetchBlogs,index}) => {
+
+  
 
     const {title,createdAt}=blog;
     const BlogDate=new Date(createdAt)
